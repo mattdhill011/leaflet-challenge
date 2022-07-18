@@ -1,5 +1,5 @@
 url = "https://raw.githubusercontent.com/mattdhill011/leaflet-challenge/main/Leaflet-Step-1/all_month.geojson"
-
+plateUrl = "https://raw.githubusercontent.com/mattdhill011/leaflet-challenge/main/Leaflet-Step-1/PB2002_boundaries.json"
 
 d3.json(url).then(function(earthquakes) {
 
@@ -50,6 +50,20 @@ d3.json(url).then(function(earthquakes) {
             Time Recorded: ${date}</p>
         `).addTo(map);
     }
+
+    d3.json(plateUrl).then(function(plateBoundry) {
+        for (var i = 0; i < plateBoundry.features.length; i++) {
+            var plateCoord = plateBoundry.features[i].geometry.coordinates;
+            console.log(plateCoord);
+            var reversedCoord = [];
+            for (var j = 0; j < plateCoord.length; i++) {
+                reversedCoord.push([plateCoord[j][1], plateCoord[j][0]]);
+            };
+            L.polygon(reversedCoord, {
+                color:"black"
+            }).addTo(map);
+        }
+    });
 
 
 });
