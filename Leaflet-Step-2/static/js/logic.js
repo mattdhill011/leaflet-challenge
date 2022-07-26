@@ -1,5 +1,5 @@
-url = "https://raw.githubusercontent.com/mattdhill011/leaflet-challenge/main/Leaflet-Step-2/all_month.geojson"
-plateUrl = "https://raw.githubusercontent.com/mattdhill011/leaflet-challenge/main/Leaflet-Step-2/PB2002_boundaries.json"
+url = "https://raw.githubusercontent.com/mattdhill011/leaflet-challenge/main/Leaflet-Step-2/all_month.geojson";
+plateUrl = "https://raw.githubusercontent.com/mattdhill011/leaflet-challenge/main/Leaflet-Step-2/PB2002_boundaries.json";
 
 d3.json(url).then(function(earthquakes) {
 
@@ -132,6 +132,4 @@ d3.json(url).then(function(earthquakes) {
     // Now we add controls for selecting the layers
     var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(map);
 
-});
-
-
+})
